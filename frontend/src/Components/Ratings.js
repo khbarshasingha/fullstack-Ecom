@@ -1,11 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Ratings = ({ value, text }) => {
+const Ratings = ({ value, text, color }) => {
   return (
-    <div>
+    <div className="rating">
       <span>
         {/* visit fontawesome to collect the star icon and then grab according to the value passed as props */}
         <i
+          style={{ color }}
           className={
             value >= 1
               ? "fas fa-star"
@@ -20,6 +22,7 @@ const Ratings = ({ value, text }) => {
       <span>
         {/* visit fontawesome to collect the star icon and then grab according to the value passed as props */}
         <i
+          style={{ color }}
           className={
             value >= 2
               ? "fas fa-star"
@@ -34,6 +37,7 @@ const Ratings = ({ value, text }) => {
       <span>
         {/* visit fontawesome to collect the star icon and then grab according to the value passed as props */}
         <i
+          style={{ color }}
           className={
             value >= 3
               ? "fas fa-star"
@@ -48,6 +52,7 @@ const Ratings = ({ value, text }) => {
       <span>
         {/* visit fontawesome to collect the star icon and then grab according to the value passed as props */}
         <i
+          style={{ color }}
           className={
             value >= 4
               ? "fas fa-star"
@@ -62,6 +67,7 @@ const Ratings = ({ value, text }) => {
       <span>
         {/* visit fontawesome to collect the star icon and then grab according to the value passed as props */}
         <i
+          style={{ color }}
           className={
             value >= 5
               ? "fas fa-star"
@@ -80,4 +86,13 @@ const Ratings = ({ value, text }) => {
   );
 };
 
+Ratings.defaultProps = {
+  color: "#f8e825"
+};
+
+Ratings.propTypes = {
+  value: PropTypes.number.isRequired,
+  text: PropTypes.number.isRequired,
+  color: PropTypes.string
+};
 export default Ratings;
