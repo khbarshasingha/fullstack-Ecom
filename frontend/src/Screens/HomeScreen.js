@@ -11,15 +11,7 @@ export const HomeScreen = () => {
           return (
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
               {" "}
-              <Product
-                product={product}
-                // id={product._id}
-                // name={product.name}
-                // img={product.image}
-                // rating={product.rating}
-                // reviews={product.numReviews}
-                // price={product.price}
-              />
+              <Product product={product} />
             </Col>
           );
         })}
