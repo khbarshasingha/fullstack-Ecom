@@ -22,11 +22,13 @@ const importData = async () => {
     const createdUsers = await User.insertMany(Users);
     //extracts the admin details into adminUser var
     const adminUser = createdUsers[0]._id;
-
     const sampleProducts = products.map(product => {
       return { ...product, user: adminUser };
     });
+    console.log(sampleProducts);
     await Product.insertMany(sampleProducts);
+    console.log("next phase");
+
     console.log("Data imported ".green.inverse);
     process.exit();
   } catch (error) {
